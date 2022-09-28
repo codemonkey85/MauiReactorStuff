@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:MauiReactorBlazorHybrid"
+            x:Class="MauiReactorBlazorHybrid.MainPage"
+            BackgroundColor="{DynamicResource PageBackgroundColor}"
+            xmlns:pages="clr-namespace:MauiReactorBlazorHybrid.Pages"
+            xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+            ios:Page.UseSafeArea="True">
+
+    <ContentPage Title="Index" ios:Page.UseSafeArea="True">
+        <BlazorWebView x:Name="indexBlazorWebView" HostPage="wwwroot/index.html">
+            <BlazorWebView.RootComponents>
+                <RootComponent Selector="#app" ComponentType="{x:Type pages:Index}" />
+            </BlazorWebView.RootComponents>
+        </BlazorWebView>
+    </ContentPage>
+
+    <ContentPage Title="Counter" ios:Page.UseSafeArea="True">
+        <BlazorWebView x:Name="counterBlazorWebView" HostPage="wwwroot/index.html">
+            <BlazorWebView.RootComponents>
+                <RootComponent Selector="#app" ComponentType="{x:Type pages:Counter}" />
+            </BlazorWebView.RootComponents>
+        </BlazorWebView>
+    </ContentPage>
+
+    <ContentPage Title="Fetch Data" ios:Page.UseSafeArea="True">
+        <BlazorWebView x:Name="fetchDataBlazorWebView" HostPage="wwwroot/index.html">
+            <BlazorWebView.RootComponents>
+                <RootComponent Selector="#app" ComponentType="{x:Type pages:FetchData}" />
+            </BlazorWebView.RootComponents>
+        </BlazorWebView>
+    </ContentPage>
+
+</TabbedPage>
